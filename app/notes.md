@@ -8,7 +8,7 @@ models:
 
         attributes: 
         :email
-        :password
+        :password_digest
         :professional_bartender? (boolean)
 
 
