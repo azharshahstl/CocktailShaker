@@ -14,6 +14,7 @@ models:
 
     Cocktail
     belongs_to :mixologist
+    belongs_to :style
     has_many :alcohols
     has_many :mixologists, through: comments
 
@@ -67,3 +68,6 @@ models:
 
         attributes:
         :content
+
+    Style
+    has_many :cocktails
