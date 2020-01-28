@@ -25,6 +25,7 @@ models:
         :garnish(checkbox)
         :direction
         :mixologist_id
+        :style_id
 
     
 
