@@ -34,6 +34,8 @@ models:
 
         attributes:
         :name 
+        :favorite_liquors
+        :reason_to_shake
         :cocktail_id
 
 
@@ -72,3 +74,11 @@ models:
 
     Style
     has_many :cocktails
+
+        attributes: 
+        :palette
+
+Nested routes:  Nest cocktails inside of mixologists.  This allows users to see
+all cocktails or all cocktails by a particular mixologist. 
+
+I want to allow users to see all cocktails that are of a particular style, all cocktails (which will contain links to individual cocktail show pages) and individual cocktails.  Mixologists can logout from any page, maybe use a 'back' button.  
