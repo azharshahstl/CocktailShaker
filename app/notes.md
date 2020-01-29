@@ -87,4 +87,4 @@ all cocktails or all cocktails by a particular mixologist.
 
 I want to allow users to see all cocktails that are of a particular style, all cocktails (which will contain links to individual cocktail show pages) and individual cocktails.  Mixologists can logout from any page, maybe use a 'back' button. Users will also have the option to have the App pick a cocktail for them to make at random.  
 
-Admins will be namespaced with users and will have access to stats such as number of users and total cocktails in the DB.  
+Admins will be namespaced with users and will have access to stats such as number of users and total cocktails in the DB as well as all user's fav_alcohols and reason_to_shake.  
