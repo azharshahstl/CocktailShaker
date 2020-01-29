@@ -46,6 +46,12 @@ models:
         :type
         :cocktail_id
 
+    Measurement
+    belongs_to :cocktail
+
+        attributes:
+        :size
+
 
     Garnish
     belongs_to :cocktail
