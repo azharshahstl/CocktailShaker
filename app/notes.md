@@ -75,6 +75,9 @@ models:
 
         attributes:
         :content
+        :cocktail_id
+        :mixologist_id
+
 
     Style
     has_many :cocktails
