@@ -1,5 +1,7 @@
 class Mixologist < ApplicationRecord
-    validates :email, :password_digest, presence: true
+    has_secure_password
+    validates :email, presence: true, uniqueness: true
+    
     has_many :cocktails
     has_many :alcohols, through: :cocktails
     has_many :cocktails, through: :comments
