@@ -10,6 +10,8 @@ models:
         :email
         :password_digest
         :prof_bartender (boolean)
+        :fav_liquors
+        :reason_to_shake
 
 
     Cocktail
@@ -32,18 +34,14 @@ models:
     has_many mixologists: through, :cocktails
 
         attributes:
-        :name 
-        :favorite_liquors
-        :reason_to_shake
-    
-
-
+        :etoh_name 
+        
 
     GlassWare
     belongs_to :cocktail
 
         attributes:
-        :type
+        :style
         :cocktail_id
 
     Measurement
