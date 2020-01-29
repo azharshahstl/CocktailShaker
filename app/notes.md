@@ -28,7 +28,6 @@ models:
         :style_id
 
     
-
     Alcohol
     has_many mixologists: through, :cocktails
 
@@ -76,7 +75,7 @@ models:
     has_many :cocktails
 
         attributes: 
-        :palette
+        :pallette
 
 Nested routes:  Nest cocktails inside of mixologists.  This allows users to see
 all cocktails or all cocktails by a particular mixologist. 
