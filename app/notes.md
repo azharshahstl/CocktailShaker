@@ -9,14 +9,14 @@ models:
         attributes: 
         :email
         :password_digest
-        :professional_bartender? (boolean)
+        :prof_bartender (boolean)
 
 
     Cocktail
     belongs_to :mixologist
     belongs_to :style
     has_many :alcohols
-    has_many :mixologists, through: comments
+    has_many :mixologists, through: :comments
 
         attributes: 
         :name
@@ -35,7 +35,7 @@ models:
         :name 
         :favorite_liquors
         :reason_to_shake
-        :cocktail_id
+    
 
 
 
@@ -51,13 +51,14 @@ models:
 
         attributes:
         :size
+        :cocktail_id
 
 
     Garnish
     belongs_to :cocktail
 
         attributes:
-        :type
+        :kind
         :cocktail_id
 
 
