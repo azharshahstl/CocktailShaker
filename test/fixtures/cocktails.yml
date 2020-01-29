@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  alcohol: false
+  glassware: false
+  garnish: false
+  direction: MyText
+  mixologist_id: 1
+  style_id: 1
+
+two:
+  name: MyString
+  alcohol: false
+  glassware: false
+  garnish: false
+  direction: MyText
+  mixologist_id: 1
+  style_id: 1
