@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_161111) do
+ActiveRecord::Schema.define(version: 2020_01_29_162405) do
 
   create_table "alcohols", force: :cascade do |t|
     t.string "etoh_name"
@@ -32,6 +32,13 @@ ActiveRecord::Schema.define(version: 2020_01_29_161111) do
 
   create_table "glass_wares", force: :cascade do |t|
     t.boolean "style"
+    t.integer "cocktail_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "measurements", force: :cascade do |t|
+    t.string "size"
     t.integer "cocktail_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -48,7 +48,7 @@ models:
     belongs_to :cocktail
 
         attributes:
-        :size
+        :size(checkbox)
         :cocktail_id
 
 
