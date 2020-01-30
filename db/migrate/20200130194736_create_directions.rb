@@ -1,10 +1,8 @@
 class CreateDirections < ActiveRecord::Migration[6.0]
   def change
     create_table :directions do |t|
-      t.text :instructions
-      t.integer :cocktai_id
-
-      t.timestamps
+      t.string :instructions
+      t.integer :cocktail_id
     end
   end
 end

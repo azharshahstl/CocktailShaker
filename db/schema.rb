@@ -10,76 +10,58 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_29_164152) do
+ActiveRecord::Schema.define(version: 2020_01_30_194838) do
 
   create_table "alcohols", force: :cascade do |t|
     t.string "etoh_name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
-    t.text "direction"
-    t.integer "mixologist_id"
-    t.integer "style_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
     t.string "alcohol"
     t.string "glassware"
     t.string "garnish"
+    t.string "direction"
+    t.integer "mixologist_id"
+    t.integer "style_id"
   end
 
   create_table "comments", force: :cascade do |t|
-    t.text "content"
+    t.string "content"
     t.integer "cocktail_id"
     t.integer "mixologist_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "directions", force: :cascade do |t|
-    t.text "instructions"
-    t.integer "cocktai_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.string "instructions"
+    t.integer "cocktail_id"
   end
 
   create_table "garnishes", force: :cascade do |t|
     t.string "kind"
     t.integer "cocktail_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "glass_wares", force: :cascade do |t|
-    t.boolean "style"
+  create_table "glasswares", force: :cascade do |t|
+    t.string "style"
     t.integer "cocktail_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "measurements", force: :cascade do |t|
     t.string "size"
     t.integer "cocktail_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "mixologists", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
-    t.boolean "prof_bartender"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.boolean "prof_bartentder"
     t.string "fav_liquors"
     t.string "reason_to_shake"
   end
 
   create_table "styles", force: :cascade do |t|
     t.string "pallette"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
 end
