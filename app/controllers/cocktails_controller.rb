@@ -1,3 +1,3 @@
-class CocktailController < ApplicaitonController
+class CocktailsController < ApplicaitonController
 
 end
