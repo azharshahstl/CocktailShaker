@@ -4,6 +4,7 @@
     <title>CocktailShaker</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    
 
     <link rel="stylesheet" href="./style.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -12,9 +13,9 @@
 
   <body>
     <ul>
-  <li><%= link_to 'Home', root_path %></a></li>
-  <li><%= link_to 'Signup', signup_path %></a></li>
-  </ul>
+    <li><a class="active" href="<%= root_path %>">Home</a></li>
+    <li><a href="<%= signup_path %>">Signup</a></li>
+    </ul>
     <%= yield %>
   </body>
 </html>
