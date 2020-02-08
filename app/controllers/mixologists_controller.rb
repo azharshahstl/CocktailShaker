@@ -14,7 +14,9 @@ def create
     end
 end 
 
-def show 
+def show
+    @mixologist = Mixologist.find_by_id(params[:id]) 
+    redirect_to 'root' if !@mixologist
 end 
 
 private 

@@ -1,1 +1,3 @@
-show
+<h2> Welcome, <%= @mixologist.email.split("@").first%></h2>
+
+<%= link_to 'Logout', logout_path, method: 'delete' %>
