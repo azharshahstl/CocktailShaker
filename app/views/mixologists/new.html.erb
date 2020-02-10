@@ -13,14 +13,16 @@
     <%= f.password_field :password_confirmation %></br>
     </br>
     <%= f.label 'Favorite liquors'%>
-    <%= f.text_field :fav_liquors%></br>
+    <%= f.text_field :fav_liquors %></br>
     </br>
-
+    <%= f.label 'Why do you like making cocktails?'%>
+    <%= f.text_field :reason_to_shake %></br>
+    </br>
     <%= f.label 'Check here if you a professional bartender' %>
     <%= f.check_box :prof_bartender %></br>
     </br>
     <%= f.label 'Check here if you are registering as an administrator' %>
-    <%= f.check_box :ADMIN %></br>
+    <%= f.check_box :admin %></br>
     </br>
     <%= f.submit 'Create Mixologist' %>
     <% end %>

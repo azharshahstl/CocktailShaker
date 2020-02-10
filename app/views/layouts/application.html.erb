@@ -10,14 +10,15 @@
 
   <body>
     <ul>
-    <li><a class="active" href="<%= root_path %>">Home</a></li>
-      if logged_in?
-    <li><a href="<%= logout_path%>">Log Out</a></li>
-      else
-    <li><a href="<%= signup_path %>">Signup</a></li>
-    <li><a href="<%= login_path %>">Login</a></li>
+    <li class="active"><%= link_to "Home", root_path %></li>
+      <% if logged_in? %>
+    <li> <%= link_to "Log Out", logout_path, method: 'delete' %></li>
+      <% else %>
+    <li><%= link_to "Sign Up", signup_path %></li>
+    <li><%= link_to "Log In", login_path %></li>
     </ul>
-    <% end >%>
+    <% end %>
+    
 
     <%= yield %>
   </body>
