@@ -11,9 +11,13 @@
   <body>
     <ul>
     <li><a class="active" href="<%= root_path %>">Home</a></li>
+      if logged_in?
+    <li><a href="<%= logout_path%>">Log Out</a></li>
+      else
     <li><a href="<%= signup_path %>">Signup</a></li>
     <li><a href="<%= login_path %>">Login</a></li>
     </ul>
+    <% end >%>
 
     <%= yield %>
   </body>
