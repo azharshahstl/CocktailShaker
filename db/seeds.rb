@@ -13,8 +13,8 @@ short_rocks = Glassware.create(style: "Short Rocks Glass")
 tall_rocks = Glassware.create(style: "Tall Rocks Glass")
 
 dry = Style.create(pallette: "Dry")
-dry = Style.create(pallette: "Semi-Dry")
-dry = Style.create(pallette: "Sweet")
+semi_dry = Style.create(pallette: "Semi-Dry")
+sweet = Style.create(pallette: "Sweet")
 
 olives = Garnish.create(kind: "Oilves")
 lemon_twist = Garnish.create(kind: "Lemon Twist")
