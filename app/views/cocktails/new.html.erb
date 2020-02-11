@@ -9,7 +9,7 @@
 <%= f.text_field :alcohol %></br>
 </br>
 <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
-<%= f.collecrtion_select :glassware_id, Glassware.all, :id, :name, prompt: true %></br>
+<%= f.collection_select :glassware_id, Glassware.all, :id, :style, prompt: true %></br>
 </br>
 <%= f.label :garnish %>
 <%= f.text_field :garnish %></br>
