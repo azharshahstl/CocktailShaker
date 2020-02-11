@@ -1,6 +1,7 @@
 CocktailShaker 
 
 models:
+
     Mixologist
     has_many :cocktails
     has_many :alcohols, through: :cocktails
@@ -8,27 +9,29 @@ models:
 
         attributes: 
         :email
-        :password_digest
+        :password
         :prof_bartender (boolean)
+        :admin (boolean)
         :fav_liquors
         :reason_to_shake
-
 
     Cocktail
     belongs_to :mixologist
     belongs_to :style
-    has_many :alcohols
+    belongs_to :glassware
+    belongs_to :garnish
     has_many :measurements
+    has_many :alcohols
     has_many :mixologists, through: :comments
 
         attributes: 
         :name
-        :alcohol (checkbox)
-        :glassware(checkbox)
-        :garnish(checkbox)
+        :alcohol - (checkbox)
         :direction
         :mixologist_id
-        :style_id
+        :style_id - (Drop Dopwn, Not nested)
+        :glassware_id - (Drop Down, Not nested)
+        :garnish_id - (Drop Down, Nested)
 
     
     Alcohol
@@ -39,27 +42,22 @@ models:
         
 
     GlassWare
-    belongs_to :cocktail
+    has_many :cocktails
 
         attributes:
         :style
-        :cocktail_id
 
     Measurement
     belongs_to :cocktail
 
         attributes:
-        :size(checkbox)
-        :cocktail_id
-
+        :size (checkbox)
 
     Garnish
-    belongs_to :cocktail
+    has_many :cocktails
 
         attributes:
         :kind
-        :cocktail_id
-
 
     Direction
     belongs_to :cocktail

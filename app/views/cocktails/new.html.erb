@@ -1,4 +1,25 @@
-<h2>A New Cocktail</h2> 
+<h2>Create A New Cocktail</h2> 
 
 <%= form_for(@cocktail) do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name %></br>
+</br>
+<%= f.label :alcohol %>
+<%= f.text_field :alcohol %></br>
+</br>
+<%= f.label :glassware_id, "Glassware to serve the cocktail" %>
+<%= f.collecrtion_select :glassware_id, Glassware.all, :id, :name, prompt: true %></br>
+</br>
+<%= f.label :garnish %>
+<%= f.text_field :garnish %></br>
+</br>
+<%= f.label 'Directions' %>
+<%= f.text_area :direction %></br>
+</br>
+<%= f.submit 'Create Cocktail'%>
+
+<% end %>
+
+
 
