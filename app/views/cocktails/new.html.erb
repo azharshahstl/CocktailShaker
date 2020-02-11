@@ -11,8 +11,11 @@
 <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
 <%= f.collection_select :glassware_id, Glassware.all, :id, :style, prompt: true %></br>
 </br>
-<%= f.label :garnish %>
-<%= f.text_field :garnish %></br>
+<%= f.label :style_id, "Select the style of your cocktail" %>
+<%= f.collection_select :style_id, Style.all, :id, :pallette, prompt: true %></br>
+</br>
+<%= f.label :garnish_id, "Select the garnish for your cocktail" %>
+<%= f.collection_select :garnish_id, Garnish.all, :id, :kind, prompt: true %></br>
 </br>
 <%= f.label 'Directions' %>
 <%= f.text_area :direction %></br>
