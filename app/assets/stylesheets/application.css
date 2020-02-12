@@ -15,32 +15,31 @@
  */
  
  ul {
-   list-style-type: none;
-   margin: 0;
-   padding: 0;
-   overflow: hidden;
-   border: 1px solid #e7e7e7;
-   background-color: #f3f3f3;
- }
- 
- li {
-   float: left;
- }
- 
- li   {
-   display: block;
-   color: #666;
-   text-align: center;
-   padding: 14px 16px;
-   text-decoration: none;
- }
- 
- li a:hover:not(.active) {
-   background-color: #ddd;
- }
- 
- li .active {
-   color: white;
-   background-color: #4CAF50;
- }
- 
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: rgb(243, 237, 237);
+}
+
+li {
+  float: left;
+}
+
+li p {
+  display: block;
+  color: rgb(202, 191, 191);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li p:hover:not(.active) {
+  background-color: rgb(153, 144, 144);
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+
