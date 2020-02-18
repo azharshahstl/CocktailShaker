@@ -5,8 +5,14 @@
 <%= f.label :name %>
 <%= f.text_field :name %></br>
 </br>
-<%= f.label :alcohol %>
-<%= f.text_field :alcohol %></br>
+<%= f.label :alcohol_ids, "Alcohols" %>
+<%= f.collection_check_boxes(:alcohol_ids, Alcohol.all, :id, :etoh_name)%></br>
+</br>
+<p> Or Add new alcohols: </p>
+<%= f.fields_for :alcohols do |a| %>
+    <%= a_fields.label :etoh_name, "Alcohol name" %>
+    <%= a_fields.text_field :etoh_name %>
+    <% end %></br>
 </br>
 <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
 <%= f.collection_select :glassware_id, Glassware.all, :id, :style, prompt: true %></br>
@@ -17,6 +23,11 @@
 <%= f.label :garnish_id, "Select the garnish for your cocktail" %>
 <%= f.collection_select :garnish_id, Garnish.all, :id, :kind, prompt: true %></br>
 </br>
+<p> Or Add a new garnish: </p>
+<%= f.fields_for :garnish do |g| %>
+    <%= g_fields.label "Garnish name" %>
+    <%= g_fields.text_field :kind %>
+    <% end %></br>
 <%= f.label 'Directions' %>
 <%= f.text_area :direction %></br>
 </br>

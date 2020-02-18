@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_11_220623) do
+ActiveRecord::Schema.define(version: 2020_02_18_003221) do
 
   create_table "alcohols", force: :cascade do |t|
     t.string "etoh_name"
@@ -51,11 +51,11 @@ ActiveRecord::Schema.define(version: 2020_02_11_220623) do
 
   create_table "mixologists", force: :cascade do |t|
     t.string "email"
-    t.string "password"
     t.boolean "prof_bartender"
     t.boolean "admin"
     t.string "fav_liquors"
     t.string "reason_to_shake"
+    t.string "password_digest"
   end
 
   create_table "styles", force: :cascade do |t|
