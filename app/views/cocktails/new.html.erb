@@ -5,11 +5,12 @@
 <%= f.label :name %>
 <%= f.text_field :name %></br>
 </br>
-<%= f.label :alcohol_ids, "Alcohols" %>
-<%= f.collection_check_boxes(:alcohol_ids, Alcohol.all, :id, :etoh_name)%></br>
+</br>
 </br>
 <p> Or Add new alcohols: </p>
 <%= f.fields_for :measurement do |m| %>
+        <%= m.label :alcohol_id, "Alcohols" %>
+        <%= m.collection_select(:alcohol_id, Alcohol.all, :id, :etoh_name, include_blank :true)%>
     
         <%= m.fields_for :alcohol do |a| %>
             <%= a.label :etoh_name, "Alcohol name" %>

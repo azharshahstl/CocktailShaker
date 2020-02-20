@@ -26,6 +26,6 @@ before_action :redirect_if_not_logged_in
     private 
 
     def (cocktails_params)
-        params.require(:cocktail).permit(:name, :alcohol_ids:[], :direction, :mixologist_id, :style_id, :glassware_id, :garnish_id, :garnish_attributes: [:kind], :alcohols_attributes: [:etoh_name], measurements_attributes:[:size, :unit, :alcohol_attributes: :[:etoh_name]])
+        params.require(:cocktail).permit(:name, :alcohol_ids:[], :direction, :mixologist_id, :style_id, :glassware_id, :garnish_id, :garnish_attributes: [:kind], :alcohols_attributes: [:etoh_name], measurements_attributes:[:size, :unit, :alcohol_id, :alcohol_attributes: :[:etoh_name]])
 
 end
