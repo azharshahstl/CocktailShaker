@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_18_005721) do
+ActiveRecord::Schema.define(version: 2020_02_20_233713) do
 
   create_table "alcohols", force: :cascade do |t|
     t.string "etoh_name"
@@ -19,22 +19,17 @@ ActiveRecord::Schema.define(version: 2020_02_18_005721) do
   create_table "cocktails", force: :cascade do |t|
     t.string "name"
     t.string "alcohol"
-    t.string "direction"
     t.integer "mixologist_id"
     t.integer "style_id"
     t.integer "glassware_id"
     t.integer "garnish_id"
+    t.string "instructions"
   end
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
     t.integer "cocktail_id"
     t.integer "mixologist_id"
-  end
-
-  create_table "directions", force: :cascade do |t|
-    t.string "instructions"
-    t.integer "cocktail_id"
   end
 
   create_table "garnishes", force: :cascade do |t|

@@ -5,7 +5,7 @@
 <%= f.label :name %>
 <%= f.text_field :name %></br>
 </br>
-<%= f.fields_for :measurement do |m| %>
+<%= f.fields_for :measurements do |m| %>
         <%= m.label :alcohol_id, "Alcohols:" %>
         <%= m.collection_select(:alcohol_id, Alcohol.all, :id, :etoh_name, include_blank: true)%>
     
@@ -16,7 +16,7 @@
     <%= m.label :size, "Quantity"%>    
     <%= m.number_field :size %>
     <%= m.label :unit %>
-    <%= m.text_field :unit %>
+    <%= m.text_field :unit %></br>
  <% end %></br>
 </br>
 <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
@@ -30,11 +30,12 @@
 </br>
 <p> Or Add a new garnish: </p>
     <%= f.fields_for :garnish do |g| %>
-        <%= g.label "Garnish name" %>
+        <%= g.label "Garnish Name" %>
         <%= g.text_field :kind %>
         <% end %></br>
-<%= f.label 'Directions' %>
-<%= f.text_area :instructions%></br>
+        </br>
+<%= f.label :instructions, 'Directions' %>
+<%= f.text_area :instructions %></br>
 </br>
 <%= f.submit 'Create Cocktail'%>
 
