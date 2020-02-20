@@ -21,3 +21,12 @@ lemon_twist = Garnish.create(kind: "Lemon Twist")
 orange_twist = Garnish.create(kind: "Orange Twist")
 cherry = Garnish.create(kind: "Luxardo Cherry")
 flowers = Garnish.create(kind: "Flowers")
+
+vodka = Alcohol.create(etoh_name: "Vodka")
+dry_gin = Alcohol.create(etoh_name: "Plymouth Gin")
+herbal_gin = Alcohol.create(etoh_name: "Uncle Val's Botanical Gin")
+irish_whiskey = Alcohol.create(etoh_name: "Irish Whiskey")
+peated_scotch = Alcohol.create(etoh_name: "Laphroag scotch")
+unpeated_scotch = Alcohol.create(etoh_name: "Oban scotch")
+four_roses = Alcohol.create(etoh_name: "Four Roses Bourbon")
+

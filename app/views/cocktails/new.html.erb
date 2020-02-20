@@ -5,21 +5,18 @@
 <%= f.label :name %>
 <%= f.text_field :name %></br>
 </br>
-</br>
-</br>
-<p> Or Add new alcohols: </p>
 <%= f.fields_for :measurement do |m| %>
-        <%= m.label :alcohol_id, "Alcohols" %>
-        <%= m.collection_select(:alcohol_id, Alcohol.all, :id, :etoh_name, include_blank :true)%>
+        <%= m.label :alcohol_id, "Alcohols:" %>
+        <%= m.collection_select(:alcohol_id, Alcohol.all, :id, :etoh_name, include_blank: true)%>
     
         <%= m.fields_for :alcohol do |a| %>
-            <%= a.label :etoh_name, "Alcohol name" %>
+            <%= a.label :etoh_name, "Or add a new alcohol:" %>
             <%= a.text_field :etoh_name %>
         <% end %>
     <%= m.label :size, "Quantity"%>    
     <%= m.number_field :size %>
     <%= m.label :unit %>
-    <%-= m.text_field :unit %>
+    <%= m.text_field :unit %>
  <% end %></br>
 </br>
 <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
@@ -32,12 +29,12 @@
 <%= f.collection_select :garnish_id, Garnish.all, :id, :kind, prompt: true %></br>
 </br>
 <p> Or Add a new garnish: </p>
-<%= f.fields_for :garnish do |g| %>
-    <%= g_fields.label "Garnish name" %>
-    <%= g_fields.text_field :kind %>
-    <% end %></br>
+    <%= f.fields_for :garnish do |g| %>
+        <%= g.label "Garnish name" %>
+        <%= g.text_field :kind %>
+        <% end %></br>
 <%= f.label 'Directions' %>
-<%= f.text_area :direction %></br>
+<%= f.text_area :instructions%></br>
 </br>
 <%= f.submit 'Create Cocktail'%>
 
