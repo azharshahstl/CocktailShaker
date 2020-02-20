@@ -59,15 +59,6 @@ models:
         attributes:
         :kind
 
-    Direction
-    belongs_to :cocktail
-
-        attributes: 
-        :instructions
-        :cocktail_id
-
-
-
     Comment(join table)
     belongs_to :mixologist 
     belongs_to :cocktail
