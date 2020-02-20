@@ -9,10 +9,17 @@
 <%= f.collection_check_boxes(:alcohol_ids, Alcohol.all, :id, :etoh_name)%></br>
 </br>
 <p> Or Add new alcohols: </p>
-<%= f.fields_for :alcohols do |a| %>
-    <%= a_fields.label :etoh_name, "Alcohol name" %>
-    <%= a_fields.text_field :etoh_name %>
-    <% end %></br>
+<%= f.fields_for :measurement do |m| %>
+    
+        <%= m.fields_for :alcohol do |a| %>
+            <%= a.label :etoh_name, "Alcohol name" %>
+            <%= a.text_field :etoh_name %>
+        <% end %>
+    <%= m.label :size, "Quantity"%>    
+    <%= m.number_field :size %>
+    <%= m.label :unit %>
+    <%-= m.text_field :unit %>
+ <% end %></br>
 </br>
 <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
 <%= f.collection_select :glassware_id, Glassware.all, :id, :style, prompt: true %></br>
