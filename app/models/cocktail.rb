@@ -8,14 +8,15 @@ class Cocktail < ApplicationRecord
     has_many :mixologists, through: :comments
     accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
     
+    validates :name, presence: true
 
     def measurements_attributes=(attributes)
-        if !measurement_params["size"].empty? && !measurement_params["unit"].empty? && (!measurement_params["alcohol_attributes"]["etoh_name"].empty? || measurement_params["alcohol_id"])
-            attributes.values.each do |measurement_params|
-            self.measurements << Measurement.create(measurement_params)
+        attributes.values.each do |measurement_params|
+            if !measurement_params["size"].empty? && !measurement_params["unit"].empty? && (!measurement_params["alcohol_attributes"]["etoh_name"].blank? || measurement_params["alcohol_id"])
+                self.measurements << Measurement.create(measurement_params) 
+                #binding.pry   
             end
         end
-
     end
 
 
