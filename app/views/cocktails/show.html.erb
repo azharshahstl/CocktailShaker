@@ -1,0 +1,6 @@
+<h1><%= @cocktail.name %></h1>
+<%=@cocktail.alcohols.each do |a|%>
+   <li> <%= a.etoh_name %> </li>
+   <% end %>
+
+<%= @cocktail.instructions%>

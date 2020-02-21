@@ -11,7 +11,6 @@ class CocktailsController < ApplicationController
     end
 
     def create 
-        binding.pry
         @cocktail = Cocktail.new(cocktails_params)
             if @cocktail.save 
                 redirect_to cocktail_path(@cocktail)    
@@ -27,8 +26,7 @@ class CocktailsController < ApplicationController
     private 
 
     def cocktails_params
-        params.require(:cocktail).permit(:name, :instructions, :instructions, :mixologist_id, :style_id, :glassware_id, :garnish_id, garnish_attributes: [:kind], measurements_attributes: [:size, :unit, :alcohol_id, alcohol_attributes: [:etoh_name]])
-        #params.require(:cocktail).permit(:name, alcohol_ids:[], :instructions, :mixologist_id, :style_id, :glassware_id, :garnish_id, garnish_attributes: [:kind], measurements_attributes: [:size, :unit, :alcohol_id, alcohol_attributes: [:etoh_name]])
+        params.require(:cocktail).permit(:name, :instructions, :mixologist_id, :style_id, :glassware_id, :garnish_id, garnish_attributes: [:kind], measurements_attributes: [:size, :unit, :alcohol_id, alcohol_attributes: [:etoh_name]])
     end
 
 end

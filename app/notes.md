@@ -27,7 +27,7 @@ models:
         attributes: 
         :name
         :alcohol - (checkbox)
-        :direction
+        :instructions
         :mixologist_id
         :style_id - (Drop Dopwn, Not nested)
         :glassware_id - (Drop Down, Not nested)
