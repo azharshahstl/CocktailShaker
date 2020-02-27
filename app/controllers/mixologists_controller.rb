@@ -1,5 +1,5 @@
 class MixologistsController < ApplicationController 
-
+before_action :redirect_if_not_logged_in, only: [:show]
 def new
     @mixologist = Mixologist.new 
 end 
@@ -16,8 +16,8 @@ def create
 end 
 
 def show
-    #redirect_if_not_logged_in
-    @mixologist = Mixologist.find_by_id(params[:id]) 
+    @mixologist = Mixologist.find_by_id(params[:id])
+    redirect_to root_path  if !@mixologist 
 end 
 
 private 

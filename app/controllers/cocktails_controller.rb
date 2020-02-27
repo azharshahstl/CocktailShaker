@@ -11,7 +11,6 @@ class CocktailsController < ApplicationController
     end
 
     def create 
-        binding.pry
         @cocktail = Cocktail.new(cocktails_params)
             if @cocktail.save 
                 redirect_to cocktail_path(@cocktail)    
