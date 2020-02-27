@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
 
-helper_method :current_user, :logged_in?
+helper_method :current_mixologist, :logged_in?
 
     private 
 
-    def current_user
-        @current_user ||= Mixologist.find_by(:mixologist_id) if session(:mixologist_id)
+    def current_mixologist
+        @current_mixologist ||= Mixologist.find_by_id(session[:mixologist_id]) if session[:mixologist_id]
     end
 
     def logged_in?

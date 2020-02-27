@@ -1,5 +1,5 @@
 class MixologistsController < ApplicationController 
-before_action :redirect_if_not_logged_in, only: [:show]
+before_action :redirect_if_not_logged_in
 def new
     @mixologist = Mixologist.new 
 end 

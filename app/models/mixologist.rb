@@ -6,5 +6,4 @@ class Mixologist < ApplicationRecord
 
     has_many :cocktails
     has_many :alcohols, through: :cocktails
-    has_many :cocktails, through: :comments
 end

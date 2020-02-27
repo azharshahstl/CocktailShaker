@@ -10,8 +10,14 @@ class CocktailsController < ApplicationController
         end
     end
 
-    def create 
-        @cocktail = Cocktail.new(cocktails_params)
+    def show 
+        @cocktail = Cocktail.find_by_id(params[:id])
+    end
+
+    def create
+         
+        @cocktail = current_mixologist.cocktails.build(cocktails_params)
+        binding.pry
             if @cocktail.save 
                 redirect_to cocktail_path(@cocktail)    
             else

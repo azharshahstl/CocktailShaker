@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   
   
-  resources :mixologists
-  resources :cocktails
+  resources :mixologists do 
+    resources :cocktails, only: [:index]
+  end
+
+  resources :mixologists do 
+    resources :alcohols, only: [:index]
+  end
 
   end

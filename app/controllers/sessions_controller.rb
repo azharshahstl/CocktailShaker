@@ -1,12 +1,8 @@
 class SessionsController < ApplicationController 
+    
+    
 
-    def home 
-    end
-
-    def new 
-    end
-
-    def create 
+    def create
         @mixologist = Mixologist.find_by(email: params[:mixologist][:email])
         if @mixologist && @mixologist.authenticate(params[:mixologist][:password])
             session[:mixologist_id] = @mixologist.id 
