@@ -15,7 +15,6 @@ class CocktailsController < ApplicationController
     end
 
     def create
-         
         @cocktail = current_mixologist.cocktails.build(cocktails_params)
         binding.pry
             if @cocktail.save 

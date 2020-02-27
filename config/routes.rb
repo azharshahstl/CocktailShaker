@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+
+  resources :cocktails
   
   
   resources :mixologists do 
@@ -15,5 +17,7 @@ Rails.application.routes.draw do
   resources :mixologists do 
     resources :alcohols, only: [:index]
   end
+
+  
 
   end
