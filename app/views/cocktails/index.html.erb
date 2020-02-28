@@ -1,4 +1,4 @@
-<strong>The Current List of Our Cocktails</strong>
+<h1>The Current List of Our Cocktails</h1>
 <ol>
 <% @cocktails.each do |cocktail| %>
 <li> <%= link_to cocktail.name, cocktail_path(cocktail) %></li></br>
