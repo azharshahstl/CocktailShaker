@@ -1,0 +1,7 @@
+<strong>The Current List of Our Cocktails</strong>
+<ol>
+<% @cocktails.each do |cocktail| %>
+<li> <%= link_to cocktail.name, cocktail_path(cocktail) %></li></br>
+<% end %>
+</ol>
+ 

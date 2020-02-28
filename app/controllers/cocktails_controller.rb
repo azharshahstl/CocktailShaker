@@ -10,6 +10,10 @@ class CocktailsController < ApplicationController
         end
     end
 
+    def index
+        @cocktails = Cocktail.all  
+    end
+
     def show 
         @cocktail = Cocktail.find_by_id(params[:id])
     end
