@@ -1,7 +1,6 @@
 <h1><%= @cocktail.name %></h1>
-<% binding.pry %>%
-<%=@cocktail.alcohols.each do |a|%>
-   <li> <%= a.etoh_name %> </li>
+<% @cocktail.measurements.each do |m| %>
+   <li><%= m.alcohol.etoh_name %></li></br>
    <% end %>
-
+</br>
 <%= @cocktail.instructions%>

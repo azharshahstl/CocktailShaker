@@ -16,7 +16,6 @@ class CocktailsController < ApplicationController
 
     def create
         @cocktail = current_mixologist.cocktails.build(cocktails_params)
-        binding.pry
             if @cocktail.save 
                 redirect_to cocktail_path(@cocktail)    
             else
