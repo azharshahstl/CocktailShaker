@@ -17,5 +17,9 @@ class Cocktail < ApplicationRecord
         end
     end
 
+    def display_with_creator
+        "#{self.name} - #{self.mixologist.email.split("@").first}"
+      end
+
 
 end
