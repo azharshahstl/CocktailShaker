@@ -9,6 +9,10 @@ class Cocktail < ApplicationRecord
     
     validates :name, presence: true
 
+    def self.search(params)
+        where("LOWER(name) = ?", params)
+    end
+
     def measurements_attributes=(attributes)
         attributes.values.each do |measurement_params|
             if !measurement_params["size"].empty? && !measurement_params["unit"].empty? && (!measurement_params["alcohol_attributes"]["etoh_name"].blank? || measurement_params["alcohol_id"])
@@ -19,7 +23,7 @@ class Cocktail < ApplicationRecord
 
     def display_with_creator
         "#{self.name} - #{self.mixologist.email.split("@").first}"
-      end
+    end
 
 
 end

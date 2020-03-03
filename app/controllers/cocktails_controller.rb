@@ -11,7 +11,10 @@ class CocktailsController < ApplicationController
     end
 
     def index
-        @cocktails = Cocktail.all  
+        @cocktails = Cocktail.all 
+        if !params[:q].empty?
+            @cocktails = @cocktails.search(params[:q].downcase)
+        end 
     end
 
     def show 
