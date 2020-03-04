@@ -10,7 +10,7 @@ class Cocktail < ApplicationRecord
     validates :name, presence: true
 
     def self.search(params)
-        where("LOWER(name) LIKE ?", "%#{params}%")
+        where("LOWER(name) LIKE ?", "#{params}%")
     end
 
     def measurements_attributes=(attributes)
