@@ -3,14 +3,14 @@ class Cocktail < ApplicationRecord
     belongs_to :style
     belongs_to :glassware
     belongs_to :garnish
-    has_many :alcohols, through: :measurements
     has_many :measurements 
+    has_many :alcohols, through: :measurements
     accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
     
     validates :name, presence: true
 
     def self.search(params)
-        where("LOWER(name) LIKE ?", "#{params}%")
+        left_joins(:alcohols).where("LOWER(cocktails.name) LIKE :query OR LOWER(alcohols.etoh_name) LIKE :query", query: "%#{params}%")
     end
 
     def measurements_attributes=(attributes)
