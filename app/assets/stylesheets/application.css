@@ -39,7 +39,14 @@ li p:hover:not(.active) {
 }
 
 .active {
-  background-color: #4CAF50;
+  background-color: rgb(200, 206, 192);
 }
 
+div.center {
+  text-align: center;
+}
+
+body {
+  background-color: lightblue;
+}
 

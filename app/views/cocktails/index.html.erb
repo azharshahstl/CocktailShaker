@@ -1,20 +1,22 @@
-<h1>The Current List of Our Cocktails</h1>
+<div class="center"> 
+    <h1>The Current List of Our Cocktails</h1>
 
-<%= form_tag('/cocktails', method: 'get') do  %>
-    <%= label_tag(:q, "Search for:") %>
-    <%= text_field_tag(:q) %>
-    <%= submit_tag("Search") %>
-
-<% end %>
-
-<% if @cocktails.empty? %>
-    <h3>Sorry, but no one has created a cocktail yet.  Go ahead and make one! <h3>
-    <% else %>
-<ol>
-    <% @cocktails.each do |cocktail| %>
-    <li><%= link_to cocktail.display_with_creator,  cocktail_path(cocktail) %></li>
-    <br>
+    <%= form_tag('/cocktails', method: 'get') do  %>
+        <%= label_tag(:q, "Search for:") %>
+        <%= text_field_tag(:q) %>
+        <%= submit_tag("Search") %>
     <% end %>
-<% end %>
-</ol>
+        
+    <% if @cocktails.empty? %>
+        <h3>Sorry, but no one has created a cocktail yet.  Go ahead and make one! <h3>
+    <% else %>
+        <ol>
+            <% @cocktails.each do |cocktail| %>
+            <li id="cocktails"><%= link_to cocktail.display_with_creator,  cocktail_path(cocktail) %></li>
+            <br>
+            <% end %>
+    <% end %>
+        </ol>
+        
+</div>
  
