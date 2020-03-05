@@ -18,7 +18,7 @@
     <% else %>
         <ol id="cocktails">
             <% @cocktails.each do |cocktail| %>
-            <li><%= link_to cocktail.display_with_creator, cocktail_path(cocktail) %> - <%= cocktail.style.pallette %></li>
+            <li><%= link_to cocktail.display_with_creator, cocktail_path(cocktail) %> &ensp; Style: <%= cocktail.style.pallette %></li>
             <br>
             <% end %>
     <% end %>
