@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
     def create
         #binding.pry
-        if auth[:info][:email] 
+        if auth && !auth[:info][:email].empty?
             @mixologist = Mixologist.find_by(email: auth[:info][:email])
             session[:mixologist_id] = @mixologist.id 
             redirect_to mixologist_path(@mixologist) 
