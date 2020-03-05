@@ -3,7 +3,6 @@ class SessionsController < ApplicationController
     
 
     def create
-        #binding.pry
         if auth && !auth[:info][:email].empty?
             @mixologist = Mixologist.find_by(email: auth[:info][:email])
             session[:mixologist_id] = @mixologist.id 
