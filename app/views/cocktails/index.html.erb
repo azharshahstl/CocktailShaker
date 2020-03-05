@@ -2,14 +2,14 @@
     <h1>The Current List of Our Cocktails</h1>
 
     <%= form_tag('/cocktails', method: 'get') do  %>
-        <%= label_tag(:q, "Search for:") %>
-        <%= text_field_tag(:q) %>
+        <%= label_tag(:query, "Search for:") %>
+        <%= text_field_tag(:query) %>
         <%= submit_tag("Search") %>
     <% end %>
     <br>
     <%= form_tag('/cocktails', method: 'get') do  %>
-        <%= label_tag(:Style_id, "Filter by Style:") %>
-        <%= collection_select(:cocktail, :style_id, Style.all, :id, :pattette) %>
+        <%= label_tag(:style_id, "Filter by Style:") %>
+        <%= collection_select(:cocktail, :style_id, Style.all, :id, :pallette, include_blank: true) %>
         <%= submit_tag("Filter") %>
     <% end %>
         
@@ -18,7 +18,7 @@
     <% else %>
         <ol>
             <% @cocktails.each do |cocktail| %>
-            <li id="cocktails"><%= link_to cocktail.display_with_creator,  cocktail_path(cocktail) %></li>
+            <li id="cocktails"><%= link_to cocktail.display_with_creator, cocktail_path(cocktail) %></li>
             <br>
             <% end %>
     <% end %>

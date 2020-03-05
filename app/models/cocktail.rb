@@ -7,7 +7,7 @@ class Cocktail < ApplicationRecord
     has_many :alcohols, through: :measurements
     accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
     
-    scope :filter, -> (params){where("style_id = ?", params)}
+    scope :filters, -> (params){where("style_id = ?", params)}
 
     validates :name, presence: true
 
@@ -26,6 +26,4 @@ class Cocktail < ApplicationRecord
     def display_with_creator
         "#{self.name} - #{self.mixologist.email.split("@").first}"
     end
-
-
 end
