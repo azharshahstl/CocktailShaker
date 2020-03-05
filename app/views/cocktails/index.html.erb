@@ -6,6 +6,12 @@
         <%= text_field_tag(:q) %>
         <%= submit_tag("Search") %>
     <% end %>
+    <br>
+    <%= form_tag('/cocktails', method: 'get') do  %>
+        <%= label_tag(:Style_id, "Filter by Style:") %>
+        <%= collection_select(:cocktail, :style_id, Style.all, :id, :pattette) %>
+        <%= submit_tag("Filter") %>
+    <% end %>
         
     <% if @cocktails.empty? %>
         <h3>Sorry, but no one has created a cocktail yet.  Go ahead and make one! <h3>
