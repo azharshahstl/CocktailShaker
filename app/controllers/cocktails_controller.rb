@@ -1,5 +1,6 @@
 class CocktailsController < ApplicationController
     before_action :redirect_if_not_logged_in
+    before_action :check_if_can_edit, only: [:edit, :update]
 
     def new 
         @cocktail = Cocktail.new 
@@ -31,13 +32,11 @@ class CocktailsController < ApplicationController
     end
 
     def edit 
-        @cocktail = Cocktail.find_by_id(params[:id])
-        redirect_to cocktails_path if current_mixologist.id != @cocktail.mixologist_id      
+       # check_if_can_edit     
     end
 
     def update
-        @cocktail = Cocktail.find_by_id(params[:id])
-        redirect_to cocktails_path if current_mixologist.id != @cocktail.mixologist_id 
+        #check_if_can_edit 
 
         @cocktail.update(cocktails_params)
         if @cocktail.save
