@@ -5,7 +5,7 @@ class Cocktail < ApplicationRecord
     belongs_to :garnish
     has_many :measurements 
     has_many :alcohols, through: :measurements
-    accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
+    #accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
     
     scope :filters, -> (params){where("style_id = ?", params)}
     scope :alphabetize, -> {order(:name)}

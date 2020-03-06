@@ -23,6 +23,7 @@ class CocktailsController < ApplicationController
     end
 
     def create
+        
         @cocktail = current_mixologist.cocktails.build(cocktails_params)
         if @cocktail.save 
             redirect_to cocktail_path(@cocktail)    
@@ -31,13 +32,10 @@ class CocktailsController < ApplicationController
         end
     end
 
-    def edit 
-       # check_if_can_edit     
+    def edit      
     end
 
     def update
-        #check_if_can_edit 
-
         @cocktail.update(cocktails_params)
         if @cocktail.save
             redirect_to cocktails_path 
