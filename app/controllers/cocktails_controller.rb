@@ -23,20 +23,28 @@ class CocktailsController < ApplicationController
 
     def create
         @cocktail = current_mixologist.cocktails.build(cocktails_params)
-            if @cocktail.save 
-                redirect_to cocktail_path(@cocktail)    
-            else
-                redirect_to new_cocktail_path
-            end
+        if @cocktail.save 
+            redirect_to cocktail_path(@cocktail)    
+        else
+            redirect_to new_cocktail_path
+        end
     end
 
     def edit 
         @cocktail = Cocktail.find_by_id(params[:id])
-            if current_mixologist[:id] == @cocktail.mixologist_id 
-                redirect_to edit_cocktail_path(@cocktail)      
-            else 
-                redirect_to root_path
-            end     
+        redirect_to cocktails_path if current_mixologist.id != @cocktail.mixologist_id      
+    end
+
+    def update
+        @cocktail = Cocktail.find_by_id(params[:id])
+        redirect_to cocktails_path if current_mixologist.id != @cocktail.mixologist_id 
+
+        @cocktail.update(cocktails_params)
+        if @cocktail.save
+            redirect_to cocktails_path 
+        else  
+            render :edit
+        end
     end
 
     private 
