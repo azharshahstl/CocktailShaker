@@ -30,6 +30,15 @@ class CocktailsController < ApplicationController
             end
     end
 
+    def edit 
+        @cocktail = Cocktail.find_by_id(params[:id])
+            if current_mixologist[:id] == @cocktail.mixologist_id 
+                redirect_to edit_cocktail_path(@cocktail)      
+            else 
+                redirect_to root_path
+            end     
+    end
+
     private 
 
     def cocktails_params
