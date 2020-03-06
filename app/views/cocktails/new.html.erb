@@ -14,7 +14,7 @@
             <%= a.text_field :etoh_name %>
         <% end %>
     <%= m.label :size, "Amount"%>    
-    <%= m.number_field :size %>
+    <%= m.number_field :size, step: 0.25 %>
     <%= m.label :unit %>
     <%= m.text_field :unit %></br>
  <% end %></br>

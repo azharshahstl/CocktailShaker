@@ -4,7 +4,7 @@ class CocktailsController < ApplicationController
     def new 
         @cocktail = Cocktail.new 
         @cocktail.build_garnish
-        3.times do 
+        6.times do 
             m = @cocktail.measurements.build
             m.build_alcohol
         end

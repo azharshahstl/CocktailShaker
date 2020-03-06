@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_28_203724) do
+ActiveRecord::Schema.define(version: 2020_03_06_024926) do
 
   create_table "alcohols", force: :cascade do |t|
     t.string "etoh_name"
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_02_28_203724) do
     t.integer "alcohol_id"
     t.integer "cocktail_id"
     t.string "unit"
-    t.integer "size"
+    t.float "size"
   end
 
   create_table "mixologists", force: :cascade do |t|
