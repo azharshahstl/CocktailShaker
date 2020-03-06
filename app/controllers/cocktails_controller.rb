@@ -11,7 +11,7 @@ class CocktailsController < ApplicationController
     end
 
     def index
-        @cocktails = Cocktail.all
+        @cocktails = Cocktail.alphabetize
             
         @cocktails = @cocktails.search(params[:query].downcase) if params[:query] && !params[:query].empty? 
         @cocktails = @cocktails.filters(params[:cocktail][:style_id]) if params[:cocktail] && !params[:cocktail][:style_id].empty?

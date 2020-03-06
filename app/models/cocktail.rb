@@ -8,7 +8,7 @@ class Cocktail < ApplicationRecord
     accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
     
     scope :filters, -> (params){where("style_id = ?", params)}
-
+    scope :alphabetize, -> {order(:name)}
     validates :name, presence: true
 
     def self.search(params)

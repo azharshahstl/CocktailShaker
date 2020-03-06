@@ -4,4 +4,5 @@ class Alcohol < ApplicationRecord
     has_many :measurements
     has_many :cocktails
     
+    scope :alphabetize, -> {order(:etoh_name)}
 end

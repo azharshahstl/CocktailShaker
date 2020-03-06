@@ -7,7 +7,7 @@
 </br>
 <%= f.fields_for :measurements do |m| %>
         <%= m.label :alcohol_id, "Alcohols:" %>
-        <%= m.collection_select(:alcohol_id, Alcohol.all, :id, :etoh_name, include_blank: true)%>
+        <%= m.collection_select(:alcohol_id, Alcohol.all.alphabetize, :id, :etoh_name, include_blank: true)%>
     
         <%= m.fields_for :alcohol do |a| %>
             <%= a.label :etoh_name, "Or add a new alcohol:" %>
