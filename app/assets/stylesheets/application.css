@@ -54,3 +54,18 @@ ol.cocktails {
   text-align: center;
 }
 
+img {
+  float: left;
+  border-radius: 50%;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  padding: 10px;
+  text-align: justify;
+  
+}
+
