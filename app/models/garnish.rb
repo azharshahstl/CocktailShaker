@@ -1,6 +1,7 @@
 class Garnish < ApplicationRecord
     has_many :cocktails
-    #validates :kind, uniqueness: true, presence: true
+    
+    scope :alphabetize, -> {order(:kind)}
     
     def garnish_attributes=(garnish_params)
         if !garnish_params['kind'].empty? 
