@@ -14,6 +14,6 @@ Rails.application.routes.draw do
   
   
   resources :mixologists do 
-    resources :cocktails, only: [:index]
+    resources :cocktails, only: [:new, :index]
     end
   end
