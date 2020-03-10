@@ -1,15 +1,16 @@
 class Cocktail < ApplicationRecord
+    validates :name, presence: true
     belongs_to :mixologist 
     belongs_to :style
     belongs_to :glassware
     belongs_to :garnish
     has_many :measurements 
     has_many :alcohols, through: :measurements
-    #accepts_nested_attributes_for :garnish, reject_if: proc { |attributes| attributes['kind'].blank?}
-    
+   
     scope :filters, -> (params){where("style_id = ?", params)}
     scope :alphabetize, -> {order(:name)}
-    validates :name, presence: true
+
+    
 
     def self.search(params)
         left_joins(:alcohols).where("LOWER(cocktails.name) LIKE :query OR LOWER(alcohols.etoh_name) LIKE :query", query: "%#{params}%")

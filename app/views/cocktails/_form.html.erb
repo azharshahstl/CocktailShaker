@@ -1,58 +1,45 @@
 <%= form_for(@cocktail) do |f| %>
-
-<% if @cocktail.errors.any? %>
-    <div id="error_explanation">
-      <h3>There were some errors:</h3>
-      <ul>
-        <% @cocktail.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <% if @cocktail.errors[:name].empty? %>
-    <div class="field">
-  <% else %>
+    <% if flash[:message] %>
     <div class="field_with_errors">
-  <% end %>
-
-<%= f.label :name %>
-<%= f.text_field :name %>
-</div></br>
-</br>
-<%= f.fields_for :measurements do |m| %>
-        <%= m.label :alcohol_id, "Alcohols:" %>
-        <%= m.collection_select(:alcohol_id, Alcohol.all.alphabetize, :id, :etoh_name, include_blank: true)%>
-    
-        <%= m.fields_for :alcohol do |a| %>
-            <%= a.label :etoh_name, "Or add a new alcohol:" %>
-            <%= a.text_field :etoh_name %>
+        <%= flash[:message] %>
         <% end %>
-    <%= m.label :size, "Amount"%>    
-    <%= m.number_field :size, step: 0.25 %>
-    <%= m.label :unit %>
-    <%= m.text_field :unit %></br>
- <% end %></br>
-</br>
-<%= f.label :glassware_id, "Glassware to serve the cocktail" %>
-<%= f.collection_select(:glassware_id, Glassware.all.alphabetize, :id, :style, include_blank: true) %></br>
-</br>
-<%= f.label :style_id, "Select the style of your cocktail" %>
-<%= f.collection_select(:style_id, Style.all.alphabetize, :id, :pallette, include_blank: true)%></br>
-</br>
-<%= f.label :garnish_id, "Select the garnish for your cocktail" %>
-<%= f.collection_select(:garnish_id, Garnish.all.alphabetize, :id, :kind, include_blank: true) %></br>
-</br>
-<p> Or Add a new garnish: </p>
-    <%= f.fields_for :garnish do |g| %>
-        <%= g.label :kind, "Garnish Name" %>
-        <%= g.text_field :kind %>
-        <% end %></br>
-        </br>
-<%= f.label :instructions, 'Directions' %>
-<%= f.text_area :instructions %></br>
-</br>
-<%= f.submit 'Create Cocktail'%>
-
-<% end %>
+    </div>
+        <br>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    </br>
+    </br>
+    <%= f.fields_for :measurements do |m| %>
+            <%= m.label :alcohol_id, "Alcohols:" %>
+            <%= m.collection_select(:alcohol_id, Alcohol.all.alphabetize, :id, :etoh_name, include_blank: true)%>
+        
+            <%= m.fields_for :alcohol do |a| %>
+                <%= a.label :etoh_name, "Or add a new alcohol:" %>
+                <%= a.text_field :etoh_name %>
+            <% end %>
+        <%= m.label :size, "Amount"%>    
+        <%= m.number_field :size, step: 0.25 %>
+        <%= m.label :unit %>
+        <%= m.text_field :unit %></br>
+    <% end %></br>
+    </br>
+    <%= f.label :glassware_id, "Glassware to serve the cocktail" %>
+    <%= f.collection_select(:glassware_id, Glassware.all.alphabetize, :id, :style, include_blank: true) %></br>
+    </br>
+    <%= f.label :style_id, "Select the style of your cocktail" %>
+    <%= f.collection_select(:style_id, Style.all.alphabetize, :id, :pallette, include_blank: true)%></br>
+    </br>
+    <%= f.label :garnish_id, "Select the garnish for your cocktail" %>
+    <%= f.collection_select(:garnish_id, Garnish.all.alphabetize, :id, :kind, include_blank: true) %></br>
+    </br>
+    <p> Or Add a new garnish: </p>
+        <%= f.fields_for :garnish do |g| %>
+            <%= g.label :kind, "Garnish Name" %>
+            <%= g.text_field :kind %>
+            <% end %></br>
+            </br>
+    <%= f.label :instructions, 'Directions' %>
+    <%= f.text_area :instructions %></br>
+    </br>
+    <% end %>
+   
