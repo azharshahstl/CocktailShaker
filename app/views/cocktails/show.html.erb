@@ -6,4 +6,4 @@
 <%= @cocktail.instructions%>
 <br>
 <br>
-<%= link_to "Click here to Edit this cocktail", edit_cocktail_path(@cocktail) %>
+<%= link_to "Click here to Edit this cocktail", edit_cocktail_path(@cocktail) if current_mixologist.id == @cocktail.mixologist_id %>

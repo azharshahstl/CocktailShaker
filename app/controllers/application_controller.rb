@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-helper_method :current_mixologist, :logged_in?
+helper_method :current_mixologist, :logged_in?, :check_if_can_edit
 
     private 
 

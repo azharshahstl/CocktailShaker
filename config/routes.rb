@@ -13,12 +13,5 @@ Rails.application.routes.draw do
   
   resources :mixologists do 
     resources :cocktails, only: [:index]
-  end
-
-  resources :mixologists do 
-    resources :alcohols, only: [:index]
-  end
-
-  
-
+    end
   end
