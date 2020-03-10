@@ -12,10 +12,14 @@ class CocktailsController < ApplicationController
     end
 
     def index
-        @cocktails = Cocktail.alphabetize
-            
-        @cocktails = @cocktails.search(params[:query].downcase) if params[:query] && !params[:query].empty? 
-        @cocktails = @cocktails.filters(params[:cocktail][:style_id]) if params[:cocktail] && !params[:cocktail][:style_id].empty?
+        if params[:mixologist_id] && @mixologist = Mixologist.find_by_id(params[:mixologist_id])
+            @cocktails = @mixologist.cocktails
+        else 
+            @cocktails = Cocktail.alphabetize
+                
+            @cocktails = @cocktails.search(params[:query].downcase) if params[:query] && !params[:query].empty? 
+            @cocktails = @cocktails.filters(params[:cocktail][:style_id]) if params[:cocktail] && !params[:cocktail][:style_id].empty?
+        end
     end
 
     def show 
