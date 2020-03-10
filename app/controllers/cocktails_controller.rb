@@ -39,6 +39,13 @@ class CocktailsController < ApplicationController
     def edit      
     end
 
+    def random
+        @cocktails = Cocktail.all
+        @cocktail =  @cocktails.sample
+        
+        render :show
+    end 
+
     def update
         @cocktail.update(cocktails_params)
         if @cocktail.save

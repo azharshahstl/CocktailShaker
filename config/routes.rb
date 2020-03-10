@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
+  get '/random' => 'cocktails#random'
+  post '/random' => 'cocktails#random'
   get '/auth/facebook/callback' => 'sessions#create'
 
   resources :cocktails
