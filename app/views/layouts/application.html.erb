@@ -13,9 +13,9 @@
     <ul>
     <li><p class="active"><%= link_to "Home", root_path %></p></p></li>
       <% if logged_in? %>
-    <li><p><%= link_to "Create a Cocktail", new_mixologist_cocktail_path(current_mixologist) %></p></li>
+    <li><p><%= link_to "Create a Cocktail", new_cocktail_path(current_mixologist) %></p></li>
     <li><p><%= link_to "See All the Cocktails", cocktails_path %></p></li>
-    <li><p><%= link_to "See Your Cocktails", mixologist_cocktails_path(current_mixologist) %></p></li>
+    <li><p><%= link_to "See Your Cocktails", mixologist_cocktails_path(current_mixologist) if current_mixologist %></p></li>
     <li><p><%= link_to "Log Out", logout_path, method: "delete" %></p></li>
     <li><p><%= link_to "See All Mixologists if Admin", admin_stats_path %></p></li>
       <% else %>

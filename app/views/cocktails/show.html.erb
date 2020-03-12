@@ -1,9 +1,14 @@
 <h1><%= @cocktail.name %></h1>
+<h4>Ingredients</h4>
 <% @cocktail.measurements.each do |m| %>
-   <li><%= m.alcohol.etoh_name %></li></br>
+   <li><%= m.alcohol.etoh_name %>&nbsp <%= m.size %>&nbsp<%= m.unit %></li></br>
    <% end %>
 </br>
-<%= @cocktail.instructions%>
+<h4>Garnish:</h4><%= @cocktail.garnish.kind %><br>
+<br>
+<h4>Glassware</h4><%= @cocktail.glassware.style %><br>
+<br>
+<h4>Instructions</h4><%= @cocktail.instructions%>
 <br>
 <br>
 <%= link_to "Click here to Edit this cocktail", edit_cocktail_path(@cocktail) if current_mixologist.id == @cocktail.mixologist_id %>
