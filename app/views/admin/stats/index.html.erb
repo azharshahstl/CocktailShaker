@@ -1,0 +1,8 @@
+<h1>FOR ADMIN EYES ONLY!!!</h1>
+<h3>Here is a list of all the Mixologists in the Database</h3>
+
+<ol>
+    <% @mixologists.each do |mixologist|%>
+    <li><%= mixologist.email%></li><br>
+    <% end %>
+</ol>

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   post '/random' => 'cocktails#random'
   get '/auth/facebook/callback' => 'sessions#create'
 
+  namespace :admin do
+    resources :stats, only: [:index]
+  end
+
   resources :cocktails
   
   
