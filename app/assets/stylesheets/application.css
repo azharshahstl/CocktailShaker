@@ -22,7 +22,7 @@
   background-color: rgb(243, 237, 237);
 }
 
-li {
+li p {
   float: left;
 }
 
@@ -59,14 +59,7 @@ img {
   border-radius: 50%;
 }
 
-h1 {
-  text-align: center;
-}
-h2 {
-  text-align: center;
-}
-
-h3 {
+h1, h2, h3, h4 {
   text-align: center;
 }
 
@@ -80,5 +73,9 @@ p {
   padding: 2px;
   background-color: rgb(175, 111, 111);
   display: table
+}
+
+div.container {
+  text-align: center;
 }
 
