@@ -50,8 +50,9 @@ body {
   background-color: lightblue;
 }
 
-ol.cocktails { 
+ol#cocktails { 
   text-align: center;
+  list-style-position: inside;
 }
 
 img {
