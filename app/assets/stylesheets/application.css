@@ -35,11 +35,7 @@ li p {
 }
 
 li p:hover:not(.active) {
-  background-color: rgb(153, 144, 144);
-}
-
-.active {
-  background-color: rgb(200, 206, 192);
+  background-color: rgb(211, 166, 124);
 }
 
 div.center {
@@ -77,6 +73,14 @@ p {
 }
 
 div.container {
+  text-align: center;
+}
+
+.login {
+  text-align: center;
+}
+
+.signup {
   text-align: center;
 }
 
