@@ -12,14 +12,11 @@
 
 ActiveRecord::Schema.define(version: 2020_09_22_172908) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "alcohols", force: :cascade do |t|
     t.string "etoh_name"
-  end
-
-  create_table "categories", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "cocktails", force: :cascade do |t|
@@ -29,7 +26,6 @@ ActiveRecord::Schema.define(version: 2020_09_22_172908) do
     t.integer "glassware_id"
     t.integer "garnish_id"
     t.string "instructions"
-    t.integer "category_id"
   end
 
   create_table "garnishes", force: :cascade do |t|
