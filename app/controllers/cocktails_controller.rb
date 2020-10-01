@@ -48,7 +48,6 @@ class CocktailsController < ApplicationController
     end 
 
     def update
-        # binding.pry
         @cocktail.update(cocktails_params)
         if @cocktail.save
             redirect_to cocktail_path 
