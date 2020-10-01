@@ -1,5 +1,5 @@
 <h2>Edit Cocktail: <%= @cocktail.name %></h2> 
-
+   
 <%= form_for(@cocktail) do |f| %>
     <% if flash[:message] %>
     <div class="field_with_errors">
@@ -17,7 +17,7 @@
         
             <%= m.fields_for :alcohol do |a| %>
                 <%= a.label :etoh_name, "Or add a new alcohol:" %>
-                <%= a.text_field :etoh_name %>
+                <%= a.text_field :etoh_name %> 
             <% end %>
         <%= m.label :size, "Amount"%>    
         <%= m.number_field :size, step: 0.25 %>

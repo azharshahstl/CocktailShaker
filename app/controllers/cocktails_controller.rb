@@ -48,12 +48,20 @@ class CocktailsController < ApplicationController
     end 
 
     def update
+        # binding.pry
         @cocktail.update(cocktails_params)
         if @cocktail.save
             redirect_to cocktail_path 
         else  
             render :edit
         end
+    end
+
+    def destroy
+        @cocktail = Cocktail.find_by_id(params[:id])
+        @cocktail.destroy
+        
+        redirect_to cocktails_path
     end
 
     private 

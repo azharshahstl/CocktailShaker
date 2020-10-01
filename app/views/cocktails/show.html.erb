@@ -9,8 +9,8 @@
 <br>
 <h4>Glassware</h4><%= @cocktail.glassware.style %><br>
 <br>
-<h4>Instructions</h4><%= @cocktail.instructions%>
+<h4>Directions</h4><%= @cocktail.instructions%>
 <br>
 <br>
+<%= link_to "Click here to DELETE this cocktail", @cocktail, method: 'delete' if current_mixologist.id == @cocktail.mixologist_id %>
 </div>
-<%= link_to "Click here to Edit this cocktail", edit_cocktail_path(@cocktail) if current_mixologist.id == @cocktail.mixologist_id %>

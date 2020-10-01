@@ -17,6 +17,7 @@ class Cocktail < ApplicationRecord
     end
 
     def measurements_attributes=(attributes)
+        # binding.pry
         attributes.values.each do |measurement_params|
             if !measurement_params["size"].empty? && !measurement_params["unit"].empty? && (!measurement_params["alcohol_attributes"]["etoh_name"].blank? || measurement_params["alcohol_id"])
                 self.measurements << Measurement.create(measurement_params)   
