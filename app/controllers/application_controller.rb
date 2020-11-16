@@ -20,5 +20,4 @@ helper_method :current_mixologist, :logged_in?, :check_if_can_edit
         @cocktail = Cocktail.find_by_id(params[:id])
         redirect_to cocktails_path if current_mixologist.id != @cocktail.mixologist_id  
     end
-
 end

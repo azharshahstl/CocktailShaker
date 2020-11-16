@@ -28,11 +28,10 @@ class CocktailsController < ApplicationController
 
     def create
         @cocktail = current_mixologist.cocktails.build(cocktails_params)
-
-        if @cocktail.save 
+         if @cocktail.save 
             redirect_to cocktail_path(@cocktail)    
-        else
-            flash[:message] = "You forgot to give your cocktail a name.  Let's try it again, shall we?"
+         else
+            flash[:message] = "Looks like you forgot to give your cocktail a name or pick a style, glassware or garnish.  Let's try it again, shall we?"
             redirect_to new_mixologist_cocktail_path(current_mixologist)
         end
     end
